@@ -1,0 +1,107 @@
+
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luxury Jewels</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .cart-icon {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-weight: bold;
+      background: #d63384;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .add-btn {
+      display: inline-block;
+      margin-top: 8px;
+      background: #28a745;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Luxury Jewels</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="cart-icon" href="cart.html">🛒 Cart</a>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Discover Elegant Jewelry</h1>
+    <p>Crafted with passion, worn with pride.</p>
+    <a href="#collection" class="btn">Shop Now</a>
+  </section>
+
+  <section id="collection" class="collection-section">
+  <h2>Our Collection</h2>
+
+  <h3>Neckpieces</h3>
+  <div class="product-grid">
+    <div class="product-card"><img src="assets/neck1.jpg" alt="Neckpiece 1"><h3>Classic Gold</h3><p>₹7999</p><button class="add-btn" onclick="addToCart('Classic Gold', 7999)">Add to Cart</button></div>
+    <div class="product-card"><img src="assets/neck2.jpg" alt="Neckpiece 2"><h3>Ruby Pearl</h3><p>₹8999</p><button class="add-btn" onclick="addToCart('Ruby Pearl', 8999)">Add to Cart</button></div>
+    <div class="product-card"><img src="assets/neck3.jpg" alt="Neckpiece 3"><h3>Emerald Charm</h3><p>₹9999</p><button class="add-btn" onclick="addToCart('Emerald Charm', 9999)">Add to Cart</button></div>
+    <div class="product-card"><img src="assets/neck4.jpg" alt="Neckpiece 4"><h3>Royal Grace</h3><p>₹10999</p><button class="add-btn" onclick="addToCart('Royal Grace', 10999)">Add to Cart</button></div>
+  </div>
+
+  <h3>Rings</h3>
+  <div class="product-grid">
+    <div class="product-card"><img src="assets/ring1.jpg" alt="Ring 1"><h3>Solitaire</h3><p>₹2999</p><button class="add-btn" onclick="addToCart('Solitaire', 2999)">Add to Cart</button></div>
+    <div class="product-card"><img src="assets/ring2.jpg" alt="Ring 2"><h3>Twist Gold</h3><p>₹3499</p><button class="add-btn" onclick="addToCart('Twist Gold', 3499)">Add to Cart</button></div>
+    <div class="product-card"><img src="assets/ring3.jpg" alt="Ring 3"><h3>Rose Band</h3><p>₹3999</p><button class="add-btn" onclick="addToCart('Rose Band', 3999)">Add to Cart</button></div>
+    <div class="product-card"><img src="assets/ring4.jpg" alt="Ring 4"><h3>Elegant Cut</h3><p>₹4499</p><button class="add-btn" onclick="addToCart('Elegant Cut', 4499)">Add to Cart</button></div>
+  </div>
+
+  <h3>Bracelets</h3>
+  <div class="product-grid">
+    <div class="product-card"><img src="assets/bracelet1.jpg" alt="Bracelet 1"><h3>Charm Bangle</h3><p>₹1999</p><button class="add-btn" onclick="addToCart('Charm Bangle', 1999)">Add to Cart</button></div>
+    <div class="product-card"><img src="assets/bracelet2.jpg" alt="Bracelet 2"><h3>Crystal Wrap</h3><p>₹2299</p><button class="add-btn" onclick="addToCart('Crystal Wrap', 2299)">Add to Cart</button></div>
+    <div class="product-card"><img src="assets/bracelet3.jpg" alt="Bracelet 3"><h3>Golden Knot</h3><p>₹2599</p><button class="add-btn" onclick="addToCart('Golden Knot', 2599)">Add to Cart</button></div>
+    <div class="product-card"><img src="assets/bracelet4.jpg" alt="Bracelet 4"><h3>Sleek Line</h3><p>₹2899</p><button class="add-btn" onclick="addToCart('Sleek Line', 2899)">Add to Cart</button></div>
+  </div>
+</section>
+
+<section id="about" class="about-section">
+  <h2>About Us</h2>
+  <p>Luxury Jewels is a premium brand offering handcrafted designs with elegance and sophistication. Our artisans blend tradition and modernity in every piece.</p>
+</section>
+
+<section id="contact" class="contact-section">
+  <h2>Contact Us</h2>
+  <p>Email: contact@luxuryjewels.com</p>
+  <p>Phone: +91 98765 43210</p>
+  <p>Address: 123 Diamond Street, Jaipur, India</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Luxury Jewels. All rights reserved.</p>
+</footer>
+
+<script>
+  function addToCart(name, price) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push({ name, price });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`${name} added to cart!`);
+  }
+</script>
+
+  
+</body>
+</html>
